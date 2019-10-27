@@ -1,10 +1,16 @@
 <template>
   <div>
     <sliderVer />
+    <!-- 
+      shownumber (Number) 可视区显示数量
+      dotnav （Boolean） 是否显示底部导航
+      automove （Boolean） 是否自动轮播 默认false
+      type （String） 2D / 3D  默认2D
+     -->
     <s-jay-banner
-      :rownumber='12'
-      :shownumber='5'
+      :shownumber='3'
       :dotnav='true'
+      :automove='false'
       type='2D'
     >
       <div v-for="item in 12" :key="item">

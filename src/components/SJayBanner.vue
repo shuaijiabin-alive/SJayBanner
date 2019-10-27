@@ -17,7 +17,6 @@ export default {
   props: {
     type: String,
     shownumber: Number,
-    rownumber: Number,
     automove: Boolean,
     dotnav: Boolean,
   },
@@ -47,17 +46,19 @@ export default {
     this.SJayBannerDom.onmouseenter = () => {
       clearInterval(this.moveTimer)
     }
-    this.SJayBannerDom.onmouseleave = () => {
+    if(this.autoMove) {
       this.autoPlay()
+       this.SJayBannerDom.onmouseleave = () => {
+        this.autoPlay()
+      }
     }
-    // 
+    // item 点击轮播 
     this.handleItem()
   },
   methods: {
     // 初始化
     init() {
       this.bannerType = !this.type ? '2D' : this.type // 默认2D 可设置3D
-      this.rowNumber = !this.rownumber ? '1' : this.rownumber // 轮播长度
       this.showNumber = !this.shownumber ? '1' : this.shownumber // 默认可视区为
       this.autoMove = !this.automove ? false : this.automove // 默认不可自动轮播
       this.dotNav = !this.dotnav ? false : this.dotnav // 默认没有轮播导航
@@ -75,6 +76,7 @@ export default {
       const
         BannerViewDom = this.SJayBannerDom.getElementsByClassName('banner-view')[0],
         BannerListDom = this.SJayBannerDom.getElementsByClassName('banner-list')[0]
+      this.rowNumber = BannerListDom.childNodes.length // item 的数量
       this.itemList = BannerListDom.childNodes
       BannerViewDom.style.width = SJayBannerWidth + 'px' // 设置可视区宽度
       let 
