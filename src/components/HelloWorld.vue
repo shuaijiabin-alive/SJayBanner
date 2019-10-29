@@ -10,8 +10,8 @@
     <s-jay-banner
       :shownumber='3'
       :dotnav='true'
-      :automove='false'
-      type='2D'
+      :automove='true'
+      type='3D'
     >
       <div v-for="item in 12" :key="item">
         <h2 style="height:180px; line-height:180px; text-align:center;">{{ item }}</h2>

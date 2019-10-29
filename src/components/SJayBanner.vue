@@ -170,17 +170,17 @@ export default {
     },
     // 手动轮播
     activeControl(bool) {
-      if (bool) {
-        this.activeNum ++
-        this.offsetData.unshift(this.offsetData.pop());
-      } else {
-        this.activeNum --
-        this.offsetData.push(this.offsetData.shift());
-      }
-      this.move()
-      if (this.dotNav) {
-        this.navSdatus()
-      }
+        if (bool) {
+          this.activeNum ++
+          this.offsetData.unshift(this.offsetData.pop());
+        } else {
+          this.activeNum --
+          this.offsetData.push(this.offsetData.shift());
+        }
+        this.move()
+        if (this.dotNav) {
+          this.navSdatus()
+        }
     },
     // 轮播导航渲染
     renderNavDot() {
