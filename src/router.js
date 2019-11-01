@@ -14,9 +14,9 @@ export default new Router({
       component: Home
     },
     {
-      path: "/banner",
-      name: "banner",
-      component: () => import('@/components/SJayBanner')
+      path: "/antV7",
+      name: "ant-v7",
+      component: () => import('@/components/antV7')
     },
     {
       path: "/about",

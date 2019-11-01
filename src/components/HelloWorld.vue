@@ -8,12 +8,12 @@
       type （String） 2D / 3D  默认2D
      -->
     <s-jay-banner
-      :shownumber='3'
+      :shownumber='4'
       :dotnav='true'
       :automove='true'
-      type='3D'
+      type='2D'
     >
-      <div v-for="item in 12" :key="item">
+      <div v-for="item in 5" :key="item">
         <h2 style="height:180px; line-height:180px; text-align:center;">{{ item }}</h2>
       </div>
     </s-jay-banner>

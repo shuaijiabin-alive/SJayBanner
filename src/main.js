@@ -1,5 +1,6 @@
 import Vue from "vue";
 import App from "./App.vue";
+import axios from 'axios'
 import router from "./router";
 import store from "./store";
 
@@ -7,6 +8,7 @@ import ant from 'ant-design-vue'
 import 'ant-design-vue/dist/antd.css';
 
 Vue.use(ant)
+Vue.prototype.$axios= axios
 
 Vue.config.productionTip = false;
 

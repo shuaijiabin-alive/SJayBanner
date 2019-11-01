@@ -105,9 +105,9 @@ export default {
         if(this.rowNumber <= this.showNumber) {
           this.offsetData = offsetArr.slice(0, this.rowNumber)
         } else if(this.rowNumber > this.showNumber) {
-          this.offsetData = offsetArr.slice(0, this.showNumber + 2)
+          this.offsetData = offsetArr.slice(1, this.showNumber + 2)
           for (let i = 0; i < this.rowNumber - (this.showNumber + 2); i++) {
-            this.offsetData.push(offsetArr[this.showNumber+1])
+            this.offsetData.push(offsetArr[0])
           }
         }
       } else if(this.bannerType === '3D') {
