@@ -19,6 +19,16 @@ export default new Router({
       component: () => import('@/components/antV7')
     },
     {
+      path: "/antg2",
+      name: "ant-g2",
+      component: () => import('@/components/antg2test')
+    },
+    {
+      path: "/amap",
+      name: "amap",
+      component: () => import('@/components/amap')
+    },
+    {
       path: "/about",
       name: "about",
       // route level code-splitting

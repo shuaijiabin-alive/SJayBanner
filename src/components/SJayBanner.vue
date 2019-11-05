@@ -103,7 +103,7 @@ export default {
           offsetArr.push(itemOffset)
         }
         if(this.rowNumber <= this.showNumber) {
-          this.offsetData = offsetArr.slice(0, this.rowNumber)
+          this.offsetData = offsetArr.slice(1, this.rowNumber+1)
         } else if(this.rowNumber > this.showNumber) {
           this.offsetData = offsetArr.slice(1, this.showNumber + 2)
           for (let i = 0; i < this.rowNumber - (this.showNumber + 2); i++) {
