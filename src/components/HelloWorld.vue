@@ -11,6 +11,7 @@
       :shownumber='4'
       :dotnav='true'
       :automove='false'
+      :buttonhtml='["<", ">"]'
       type='2D'
     >
       <div v-for="item in 1" :key="item">

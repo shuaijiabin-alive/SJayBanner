@@ -6,8 +6,8 @@
       </div>
     </div>
     <!-- 轮播左右切换 -->
-    <div class="prev" @click="activeControl(false)"> &lt; </div>
-    <div class="next" @click="activeControl(true)"> &gt; </div>
+    <div class="prev" @click="activeControl(false)" v-html="buttonHtml[0]"></div>
+    <div class="next" @click="activeControl(true)" v-html="buttonHtml[1]"></div>
   </div>
 </template>
 
@@ -19,10 +19,12 @@ export default {
     shownumber: Number,
     automove: Boolean,
     dotnav: Boolean,
+    buttonhtml: Array,
   },
   data() {
     return {
       /* 轮播属性 S */
+      buttonHtml: ['&lt;','&gt;'],
       bannerType: '', // 轮播图类型 2D / 3D
       showNumber: '', // 可视区显示个数
       rowNumber: '', // 轮播个数
@@ -58,6 +60,7 @@ export default {
   methods: {
     // 初始化
     init() {
+      this.buttonHtml = !this.buttonhtml ? this.buttonHtml : this.buttonhtml // 左右切换按钮样式
       this.bannerType = !this.type ? '2D' : this.type // 默认2D 可设置3D
       this.showNumber = !this.shownumber ? '1' : this.shownumber // 默认可视区为
       this.autoMove = !this.automove ? false : this.automove // 默认不可自动轮播
@@ -246,19 +249,18 @@ export default {
     .banner-view{
       position: relative;
       padding: 10px 0;
-      margin: 0 auto;
+      margin: 8px auto;
       overflow: hidden;
       .banner-list {
         .SJay-item {
           position: absolute;
-          top: 24px;
+          top: 40px;
           left: 2px;
           z-index: 0;
           display: inline-block;
-          background-color: #FFFFFF;
+          // background-color: #FFFFFF;
           overflow: hidden;
           border-radius: 4px;
-          outline: 1px solid #ddd;
           cursor: pointer;
         }
       }
@@ -273,14 +275,23 @@ export default {
       margin: auto 0;
       text-align: center;
       line-height: 42px;
+      color: #FFF;
       background-color: rgba(0, 0, 0, 0.3);
       cursor: pointer;
+      opacity: 0;
+      transition: all 0.3s ease-in-out;
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.7);
+      }
     }
     .prev {
       left: 0;
     }
     .next {
       right: 0;
+    }
+    &:hover .prev, &:hover .next{
+      opacity: 1;
     }
     .benner-nav {
       text-align: center;
