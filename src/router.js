@@ -14,6 +14,11 @@ export default new Router({
       component: Home
     },
     {
+      path: "/countRoll",
+      name: "countRoll",
+      component: () => import('@/components/countRoll')
+    },
+    {
       path: "/antV7",
       name: "ant-v7",
       component: () => import('@/components/antV7')
