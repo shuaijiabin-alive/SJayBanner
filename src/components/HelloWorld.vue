@@ -10,11 +10,11 @@
     <s-jay-banner
       :shownumber='4'
       :dotnav='true'
-      :automove='false'
+      :automove='true'
       :buttonhtml='["<", ">"]'
       type='2D'
     >
-      <div v-for="item in 1" :key="item">
+      <div v-for="item in 4" :key="item">
         <h2 style="height:180px; line-height:180px; text-align:center;">{{ item }}</h2>
       </div>
     </s-jay-banner>
