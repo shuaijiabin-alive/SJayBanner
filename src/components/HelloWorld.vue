@@ -7,6 +7,12 @@
       automove （Boolean） 是否自动轮播 默认false
       type （String） 2D / 3D  默认2D
      -->
+     <!-- <video
+      ref="videoElement"
+      controls
+      autoplay
+    ></video> -->
+     <!-- <video src='../assets/video/15483810_1_0_batch.mp4' controls="controls"></video> -->
     <s-jay-banner
       :shownumber='4'
       :dotnav='true'
@@ -24,17 +30,35 @@
 
 import sliderVer from '@/components/sliderVer'
 import SJayBanner from '@/components/SJayBanner'
+import flvjs from 'flv.js'
 
 export default {
   name: 'hello',
   data() {
     return {
-
+      flvPlayer: null
     }
   },
   components: {
     sliderVer,
     SJayBanner
-  }
+  },
+  mounted() {
+    // this.$nextTick(() => {
+    //   this.createVideo();
+    // });
+  },
+  methods: {
+    // createVideo() {
+    //   const videoElement = this.$refs.videoElement;
+    //   this.flvPlayer = flvjs.createPlayer({
+    //     type: 'flv',
+    //     url: '../assets/video/15483810_1_6.flv.flv'
+    //   });
+    //   this.flvPlayer.attachMediaElement(videoElement);
+    //   this.flvPlayer.load();
+    //   this.flvPlayer.play();
+    // }
+  },
 }
 </script>
