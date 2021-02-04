@@ -1,6 +1,12 @@
 module.exports = {
   devServer: {
-    port: 8081 // 端口号配置
+    // open: false,
+    // // 设置主机地址
+    host: 'localhost',
+    // // 设置默认端口
+    // port: 8080,
+    // https: false,
+    // hotOnly: false,
   },
   configureWebpack: {
     externals: {
