@@ -1,6 +1,7 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
+    <Cropper></Cropper>
+    <a-button type="primary" @click="getCropData"> 获取裁剪地址 </a-button>
     <HelloWorld msg="Welcome to Your Vue.js App" />567567567
     <UEditer></UEditer>
   </div>
@@ -10,16 +11,24 @@
 // @ is an alias to /src
 import HelloWorld from "@/components/HelloWorld.vue";
 import UEditer from "@/components/UEditer.vue";
+import Cropper from "@/components/Cropper.vue";
 
 export default {
   name: "home",
   components: {
     HelloWorld,
-    UEditer
+    UEditer,
+    Cropper,
   },
   data() {
-    return {
-    }
-  }
+    return {};
+  },
+  methods: {
+    getCropData() {
+      this.$refs.cropper.getCropData((data) => {
+        console.log(data);
+      });
+    },
+  },
 };
 </script>

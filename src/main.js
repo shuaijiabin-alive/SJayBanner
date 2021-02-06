@@ -6,6 +6,9 @@ import store from "./store";
 
 import ant from 'ant-design-vue'
 import 'ant-design-vue/dist/antd.css';
+import VueCropper from 'vue-cropper' 
+
+Vue.use(VueCropper)
 
 Vue.use(ant)
 Vue.prototype.$axios= axios
